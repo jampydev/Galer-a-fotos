@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería fotográfica de la Feria Bienestar Elyonyireh.">
+    <title>Galería De La Feria Bienestar & Elyonyireh</title>
+    <link rel="icon" href="https://i.ibb.co/5vPStNn/GTA-san-andreas-png.png">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+    <div class="animate__animated animate__slideInLeft">
+
+        <header class="header">
+            <a class="paginasweb" href="#" target="_blank">
+                <img style="cursor: -webkit-grabbing;" src="https://i.ibb.co/5vPStNn/GTA-san-andreas-png.png" alt="ELYONYIREH" class="header-logo"> 
+            </a>
+            <h1 class="header-title">
+                <i class="fas fa-images"></i>
+                GALERÍA DE FOTOS
+                <i class="fas fa-camera"></i> 
+            </h1>
+            <a class="paginasweb" href="#" target="_blank"> 
+                <img style="cursor: -webkit-grabbing;" src="https://i.ibb.co/5vPStNn/GTA-san-andreas-png.png" alt="BIENESTAR" class="header-logo">
+            </a>
+        </header>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Texto para el modo claro (fondo blanco) -->
+    <h5 class="light-mode">
+        ⚠Derechos Reservados - @Jampier :)
+    </h5>
+
+    <!-- Texto para el modo oscuro (fondo negro) -->
+    <h5 class="dark-mode">
+        ⚠Derechos Reservados - @Jampier :)
+    </h5>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ENLACES NIGHT & LIGHT -->
+
+    <div class="bienestar">
+
+        <button id="toggleTheme">Cambiar Tema <i class="fas fa-moon"></i></button><br><br><br>
+
+        <div class="gallery" id="imageContainer">
+            <!-- MODAL PARA LAS IMG GRANDES -->
+            <div id="imageModal" class="modal">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="logo2" src="#" style="width: 50px;" alt="BIENESTAR">
+                </div>
+                <img class="modal-content" id="largeImage" alt="Imagen en grande">
+                <div class="cerrar-boton" onclick="closeModal()">CERRAR VENTANA <i class="fas fa-ban"></i></div>
+            </div>
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- FOTOS & ENLACES A PONER -->
+
+
+
+
+
+            <!-- Foto 1 -->
+            <div class="image" data-aos="fade-up">
+                <img src="https://i.ibb.co/zJ9D4ks/Sistemas.png" alt="img1" width="300" class="thumbnail" onclick="openModal('https://i.ibb.co/zJ9D4ks/Sistemas.png')">
+                <a class="boton" data-image-url="https://i.ibb.co/zJ9D4ks/Sistemas.png" download>Descargar</a>
+                <div class="mensaje mensaje1">DESCARGA EXITOSA <i class="fas fa-thumbs-up"></i></div>
+                <hr class="linea">
+            </div>
+
+
+
+
+
+
+            <!-- Foto 2 -->
+           
+            <div class="image" data-aos="fade-up">
+                <img src="https://i.ibb.co/zJ9D4ks/Sistemas.png" alt="img2" width="300" class="thumbnail" onclick="openModal('https://i.ibb.co/zJ9D4ks/Sistemas.png')">
+                <a class="boton" data-image-url="#" download>Descargar</a>
+                <div class="mensaje mensaje2">DESCARGA EXITOSA <i class="fas fa-thumbs-up"></i></div>
+                <hr class="linea">
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://beacons.ai/bienestar.joven" style="text-decoration: none;" target="_blank">
+        <p class="no-underline" style="color: rgb(255, 0, 212);">Hola, Nos agradecerías Siguiendo Nuestras Redes <i class="fas fa-smile"></i></p>
+    </a>
+
+    <a href="https://beacons.ai/bienestar.joven" style="text-decoration: underline;" target="_blank">
+        <p id="hoverEffect" style="color: rgb(255, 0, 0);">!BIENESTAR SOMOS TODOS¡ <i class="fas fa-link"></i></p>
+    </a>
+
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">VOLVER <i class="fas fa-arrow-up"></i></button>
+
+</body>
+</html>
+
+
+
+
+
+<script src="index.js"></script>
+
+
+

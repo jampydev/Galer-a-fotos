@@ -1,0 +1,799 @@
+
+
+
+
+
+
+/* TODO EL CSS */
+
+
+
+
+
+
+body {
+
+    text-align: center;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', cursive;
+    background-color: #f0f0f5;
+    color: #333;
+ 
+}
+
+
+
+
+
+
+
+.animate__animated.animate__slideInLeft {
+    
+    animation-duration: 8s; /* Cambia el valor para hacerla más lenta o rápida */
+}
+
+
+
+
+
+  
+
+h1 {
+
+
+    font-family: 'Lucida Handwriting', cursive; 
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: white;
+    padding: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+
+
+
+
+.linea {
+
+    border-radius: 50px; /* Elimina el borde predeterminado */
+    border-top: 2px solid #2a80b9; /* Establece el grosor y color de la línea */
+    width: 100%; /* Ancho de la línea */
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+.bienestar {
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.0);
+    border: 3px solid #00d4ff;    
+    overflow: hidden; 
+   
+}
+
+
+
+
+
+
+/* Estilo para la galería de imágenes */
+.gallery {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+
+
+
+
+
+/* Imágenes ocultas que se animarán */
+.image {
+
+    display: block;
+    opacity: 0;
+    transform: translateX(-100px); /* Inicia desde la izquierda */
+
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+
+
+
+
+.image.visible {
+
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+/* Scroll suave para toda la página */
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+/* Estilo básico para las imágenes */
+.image img {
+
+    width: 300px;
+    height: auto;
+    border-radius: 50px;
+    margin-top: 10px;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Transición suave al hacer hover */
+    border: 3px solid #00d4ff;
+}
+
+
+
+
+
+
+
+
+
+/* Estilo de hover para imágenes */ 
+
+.image:hover img {
+
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+.image {
+
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.boton {
+
+    font-family: cursive;
+    font-style: italic;
+    display: block; /* Se muestra como bloque */
+    margin-top: 30px; /* Espaciado superior */ 
+    padding: 10px 15px; /* Espaciado interno */
+    background: linear-gradient(to left,  #007bff 50%, black 50%);
+    background-size: 200% 200%; /* Cambio aquí */
+    background-position: right bottom; /* Cambio aquí */
+    filter: brightness(100%);
+    color: white;
+    text-shadow: 8px 8px 18px rgba(0, 0, 0, 8);
+    font-weight: bold;
+    box-shadow: 0 0 20px #000000;
+    text-align: center;
+    transition: all 0.6s;
+    border: 1px solid #007bff;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: -webkit-grabbing;
+
+  
+}
+
+
+
+.boton:hover {
+
+    
+    color: rgb(255, 255, 255);
+    text-shadow: 8px 8px 18px rgba(0, 0, 0, 8);
+   border: 1px solid #007bff;
+   filter: brightness(100%);
+   font-weight: bold;
+  background-position: left bottom; /* Cambio aquí */
+  transform: scale(1.1);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mensaje {
+
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 226px;
+    margin: 0 auto;
+    display: none; /* Se oculta por defecto */
+    background-color: #4caf50; /* Color de fondo verde */
+    color: white; /* Color del texto blanco */
+    padding: 10px 10px; /* Espaciado interior */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Margen superior */
+    font-size: 20px; /* Tamaño de fuente */
+    text-align: center; /* Centrar texto */
+    animation: fadeIn 0.5s, moveUpDown 3s ease-in-out infinite; /* Animaciones de entrada */
+}
+
+.mensaje.show {
+
+    display: block;
+    animation: fadeIn 1s ease-in-out, moveUpDown 1s ease-in-out infinite; /* Animaciones cuando se muestra */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza invisible */
+    }
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+/* Animación de movimiento hacia arriba y abajo */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0); /* Comienza en su posición original */
+    }
+    50% {
+        transform: translateY(-10px); /* Se mueve hacia arriba */
+    }
+    100% {
+        transform: translateY(0); /* Regresa a su posición original */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header {
+
+    background-image: linear-gradient(rgba(77, 77, 77, 0.3), rgba(77, 77, 77, 0.3)), url("https://i.ibb.co/k1DMPGq/made.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Cubre toda el área */
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #00d4ff;  
+    border-radius: 50px;
+  
+}
+
+.header-logo {
+
+    filter: brightness(1.4);
+    width: 150px;
+    height: auto;
+    margin: 0 2px; /* Ajuste de margen común */
+}
+
+.header-title {
+
+
+    width: 700px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0 15px;
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CSS CAMBIAR TEMA */
+
+
+
+
+
+/* Modo oscuro (pantalla negra) */
+body.dark-mode {
+    background-color: #000000; /* Fondo de la página en negro */
+    color: white; /* Texto de la página en blanco */
+}
+
+/* Botón en modo oscuro (cuando la pantalla es negra, el botón es blanco con texto negro) */
+body.dark-mode #toggleTheme {
+    background-color: #ffffff; /* Fondo del botón en blanco */
+    color: black; /* Texto del botón en negro */
+}
+
+
+
+
+
+
+/* Hover en modo oscuro */
+body.dark-mode #toggleTheme:hover {
+    background-color: #f0f0f0; /* Un tono más claro en hover */
+    color: black;
+}
+
+/* Modo claro (pantalla blanca) */
+#toggleTheme {
+
+    font-family: 'Poppins', cursive;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 8px 15px;
+    background-color: #000000; /* Fondo del botón en negro por defecto */
+    color: white; /* Texto blanco por defecto */
+    border-radius: 50px;
+    cursor: -webkit-grabbing;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect para modo claro */
+#toggleTheme:hover {
+    background-color: #333333; /* Un tono más claro del negro en hover */
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Active state */
+#toggleTheme:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgb(0, 0, 0);
+}
+
+/* Focus state */
+#toggleTheme:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+    /* Por defecto, se ocultan ambos textos */
+    .light-mode, .dark-mode {
+        display: none;
+    }
+
+
+
+    /* Modo claro: texto negro sobre fondo blanco */
+    @media (prefers-color-scheme: light) {
+
+        .light-mode {
+            display: block;
+            color: rgb(0, 0, 0); /* Texto negro */
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .dark-mode {
+            display: none;
+        }
+    }
+
+    /* Modo oscuro: texto blanco sobre fondo negro */
+    @media (prefers-color-scheme: dark) {
+
+        .dark-mode {
+            display: block;
+            color: none;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .light-mode {
+            display: none;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOSTRAR LAS IMAGENES EN GRANDE */
+
+
+
+.image img.thumbnail {
+
+    cursor: -webkit-grabbing;
+}
+
+
+/* Estilo del modal */
+.modal {
+
+    display: none; /* Por defecto oculto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+}
+
+
+
+/* Estilo de la imagen en el modal */
+.modal-content-container {
+
+    display: flex; /* Usa flexbox para alinear horizontalmente */
+    align-items: center; /* Alinea verticalmente en el centro */
+    margin-top: 20px; /* Añade margen superior si es necesario */
+}
+
+/* Encabezado del modal */
+.modal-header {
+
+    display: flex; /* Usa flexbox para la alineación */
+    justify-content: space-between; /* Espacia el contenido */
+   
+}
+
+.modal-content {
+
+    border: 3px solid #00d4ff;  
+    border-radius: 50px;
+    max-width: 80%; /* Limita el ancho máximo de la imagen */
+    max-height: 80%; /* Limita la altura máxima de la imagen */
+    margin: auto; /* Centra la imagen */
+    cursor: url('https://cdn-icons-png.flaticon.com/128/2662/2662839.png'), default;
+
+
+}
+
+
+
+
+
+
+/* Botón "CERRAR" */
+.cerrar-boton {
+
+    background-color: rgb(255, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 10px 0 10px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 5px;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    text-align: center;
+    cursor: -webkit-grabbing;
+}
+
+.cerrar-boton:hover {
+
+    background-color: rgb(112, 0, 0);
+    font-weight: bold;
+    color: #ffffff; /* Cambia el color cuando pasas el cursor */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Botón para volver al inicio */
+
+
+
+
+
+#backToTopBtn {
+
+    display: none; /* Por defecto oculto */
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 50px; /* Posicionado en la parte inferior */
+    right: 100px; /* Posicionado a la derecha */
+    z-index: 100; /* Asegúrate de que esté por encima de otros elementos */
+    text-shadow: 8px 8px 18px rgba(0, 0, 0, 8);
+    font-weight: bold;
+    box-shadow: 0 0 20px #000000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px; /* Tamaño de la fuente */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    background-color:  #007bff; /* Color de fondo */
+    color: rgb(255, 255, 255); /* Color del texto */
+    cursor: -webkit-grabbing;
+    padding: 18px; /* Relleno */
+    border-radius: 50px; /* Bordes redondeados */
+}
+
+#backToTopBtn:hover {
+
+    background-color: #000000; /* Color de fondo al pasar el cursor */
+}
+
+
+
+
+/* LINK FINALES */
+
+
+#hoverEffect {
+
+
+    transition: top 0.2s ease;
+    position: relative;
+}
+
+
+#hoverEffect:hover {
+
+
+    top: -5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para móviles y tablets */
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+    .gallery {
+
+        flex-direction: column;
+        align-items: center;
+        gap: 1px; /* Espaciado más pequeño entre imágenes */
+    }
+
+  
+
+
+    .linea {
+
+        border: 0; /* Elimina el borde predeterminado */
+        border-top: 2px solid #2a80b9; /* Establece el grosor y color de la línea */
+        width: 80%; /* Ancho de la línea */
+        margin-top: 130px;
+        display: block;
+        box-shadow: 2px 0 2px;
+    }
+    
+
+
+    .image img {
+
+        width: 90%; /* Tamaño responsivo para móviles */
+        margin-bottom: 20px;
+    }
+
+
+    .bienestar {
+
+
+max-width: 400px;
+
+
+    }
+
+    .header {
+
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: center; /* Alinea el contenido al centro */
+        padding: 50px;
+    }
+
+    .header-title {
+
+        font-size: 20px;
+        width: 380px;
+        font-family: monospace;
+        border-radius: 20px;
+        text-align: center; /* Alinea el texto al centro */
+        margin: 20px 0; /* Ajusta el margen para espacio */
+    }
+
+    .header-logo {
+
+        width: 100px; /* Ajusta el tamaño de los logos para móviles */
+    }
+
+
+    .boton{
+
+
+   width: 120px;
+   text-align: center;
+   margin: 0 auto;
+   margin-top: 25px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+
+
+
+    }
+
+
+
+    #toggleTheme {
+
+
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+    .modal-content {
+
+        max-width: 90%;
+        max-height: 90%;
+        margin-top: 100px;
+
+    }
+
+    .modal-header {
+
+ display: block;
+
+    }
+
+
+
+ .logo2 {
+
+margin-top: 100px;
+
+
+ }
+
+
+
+ 
+/* Botón para volver al inicio */
+#backToTopBtn {
+
+    bottom: 40px; /* Posicionado en la parte inferior */
+    right: 35px; /* Posicionado a la derecha */
+    font-size: 11px; /* Tamaño de la fuente */
+    padding: 11px; /* Relleno */
+  
+}
+
+#backToTopBtn:hover {
+    background-color: #000000; /* Color de fondo al pasar el cursor */
+}
+
+
+
+
+    }
+
+
+
+
