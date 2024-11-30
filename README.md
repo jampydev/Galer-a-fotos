@@ -1,1 +1,1 @@
-# Galer-a-fotos
+# Galeria-fotos
